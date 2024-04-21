@@ -30,7 +30,6 @@ class CreateClassController
         } catch (GymDomainException $exception) {
             return new JsonResponse(['message' => $exception->getMessage()], Response::HTTP_BAD_REQUEST);
         } catch (Throwable $throwable) {
-            dd($throwable);
             return new JsonResponse(['message' => $throwable->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }

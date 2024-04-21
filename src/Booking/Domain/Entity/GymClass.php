@@ -74,7 +74,7 @@ final class GymClass extends AggregateRoot
         public readonly GymClassEndDate $endDate,
         public readonly GymClassCapacity $capacity,
         public readonly array $days,
-        public readonly array $bookings,
+        private array $bookings,
     ) {
         if ($startDate->isGreaterThan($endDate->value)) {
             throw new GymClassEndDateIsLowerThanStartDateException();

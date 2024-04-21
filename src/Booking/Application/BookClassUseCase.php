@@ -25,7 +25,7 @@ class BookClassUseCase
 
     public function book(
         string $classId,
-        string $memeberName,
+        string $memberName,
         DateTime $date
     ): void {
         $classId = new GymClassId($classId);
@@ -37,7 +37,7 @@ class BookClassUseCase
         $booking = Booking::create(
             $this->uuidGenerator->generate(),
             $classId->value,
-            $memeberName,
+            $memberName,
             $date
         );
 

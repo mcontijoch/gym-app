@@ -16,21 +16,17 @@ class BookClassRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => [
+            'classId' => [
                 'required',
                 'string'
             ],
-            'start_date' => [
+            'memberName' => [
                 'required',
                 'date',
             ],
-            'end_date' => [
+            'date' => [
                 'required',
                 'date',
-            ],
-            'capacity' => [
-                'required',
-                'integer',
             ],
         ];
     }

@@ -12,4 +12,5 @@ Route::get('/', function() {
 });
 
 Route::put('/classes', CreateClassController::class);
+
 Route::post('/bookings', BookClassController::class);

@@ -6,11 +6,9 @@ namespace Gym\Booking\Application;
 
 use DateTime;
 use Gym\Booking\Domain\Entity\GymClass;
-use Gym\Booking\Domain\Event\GymClassCreatedEvent;
 use Gym\Booking\Domain\Repository\ClassRepository;
 use Gym\Shared\Domain\Service\DomainEventDispatcher;
 use Gym\Shared\Domain\Service\UuidGenerator;
-use Gym\Shared\Domain\ValueObject\OcurredOn;
 
 class CreateClassUseCase
 {
