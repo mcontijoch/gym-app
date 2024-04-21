@@ -1,1 +1,2 @@
-# gym-app
+# Gym App
+
