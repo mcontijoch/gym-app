@@ -16,8 +16,4 @@ class GymClassEndDate
             throw new GymClassEndDateIsInThePastException();
         }
     }
-
-    public function isGreaterThan(DateTime $other): bool {
-        return $this->value > $other;
-    }
 }

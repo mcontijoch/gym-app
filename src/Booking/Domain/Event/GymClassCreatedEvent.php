@@ -14,7 +14,7 @@ use Gym\Shared\Domain\ValueObject\OcurredOn;
 
 class GymClassCreatedEvent extends DomainEvent
 {
-    private function __construct(
+    public function __construct(
         public readonly GymClassId $id,
         public readonly GymClassName $name,
         public readonly GymClassStartDate $startDate,

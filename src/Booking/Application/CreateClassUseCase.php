@@ -27,7 +27,7 @@ class CreateClassUseCase
         DateTime $endDate,
         int $capacity
     ): void {
-        $class = GymClass::fromPrimitives(
+        $class = GymClass::create(
             $this->uuidGenerator->generate(),
             $name,
             $startDate,
@@ -37,20 +37,6 @@ class CreateClassUseCase
 
         $this->repository->save($class);
 
-        $this->dispatchEvent($class);
-    }
-
-    private function dispatchEvent(GymClass $class): void
-    {
-        $this->domainEventDispatcher->dispatch(
-            new GymClassCreatedEvent(
-                $class->id,
-                $class->name,
-                $class->startDate,
-                $class->endDate,
-                $class->capacity,
-                new OcurredOn(new DateTime()),
-            )
-        );
+        $this->domainEventDispatcher->dispatch($class->pullDomainEvents());
     }
 }

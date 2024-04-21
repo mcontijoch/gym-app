@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Gym\Booking\Domain\Repository\BookingRepository;
 use Gym\Booking\Domain\Repository\ClassRepository;
+use Gym\Booking\Infrastructure\Repository\InMemoryBookingRepository;
 use Gym\Booking\Infrastructure\Repository\InMemoryClassRepository;
 use Gym\Shared\Domain\Service\DomainEventDispatcher;
 use Gym\Shared\Domain\Service\UuidGenerator;
@@ -15,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public $bindings = [
         UuidGenerator::class => RamseyUuidGenerator::class,
         ClassRepository::class => InMemoryClassRepository::class,
-        DomainEventDispatcher::class => FakeDomainEventDispatcher::class
+        DomainEventDispatcher::class => FakeDomainEventDispatcher::class,
+        BookingRepository::class => InMemoryBookingRepository::class,
     ];
 }

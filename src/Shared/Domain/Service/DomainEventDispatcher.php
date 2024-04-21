@@ -8,5 +8,8 @@ use Gym\Shared\Domain\Event\DomainEvent;
 
 interface DomainEventDispatcher
 {
-    public function dispatch(DomainEvent $event): void;
+    /**
+     * @var DomainEvent[] $events
+     */
+    public function dispatch(array $event): void;
 }
